@@ -1,0 +1,65 @@
+<div class="flex flex-col items-center justify-center w-full rounded-lg overflow-hidden">
+    <table class="w-7/12 leading-normal">
+        <thead>
+            <tr>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left font-semibold text-gray-600 uppercase tracking-wider">
+                    Name
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left font-semibold text-gray-600 uppercase tracking-wider">
+                    Type
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left font-semibold text-gray-600 uppercase tracking-wider">
+                    Level
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left font-semibold text-gray-600 uppercase tracking-wider">
+                    Kitchen
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-bs">
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-gray-900 wrap">
+                                {{ recipe.name }}
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-bs">
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-gray-900 wrap">
+                                {{ recipe.type }}
+                            </p>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <div id="{{recipe.level}}" class="flex items-center">
+                        <p id="{{recipe.level}}" class="text-gray-900 whitespace-no-wrap">
+                            {{ recipe.level }} 
+                        </p>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                    <div class="flex items-center">
+                        <p class=" whitespace-no-wrap">
+                            <a class="text-blue-700" href="/kitchen/show?id={{ recipe.__get('kitchen').id }}">
+                                {{ recipe.__get('kitchen').name }}
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="location.href='/recipe/edit?id={{recipe.id}}'"
+        class="text-sm mt-2 text-indigo-50 transition duration-150 hover:bg-indigo-500 text-white bg-indigo-600 font-semibold py-2 px-4 rounded-r">
+        Edit this recipe
+    </button>   
+</div>

@@ -1,0 +1,48 @@
+<div class="flex justify-center mb-5 mt-5">
+    <h1 class="text-4xl"> Kitchen </h1>
+</div>
+<div class="flex flex-col items-center justify-center w-full rounded-lg overflow-hidden p">
+    <table class="w-7/12 leading-normal">
+        <thead>
+            <tr>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left font-semibold text-gray-600 uppercase tracking-wider">
+                    {{kitchen.name}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white text-bs">
+                    <div class="flex items-center">
+                        <p class="text-gray-900 wrap">
+                            {{ kitchen.description }}
+                        </p>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="location.href='/kitchen/edit?id={{kitchen.id}}'"
+            class="text-sm mt-2 text-indigo-50 transition duration-150 hover:bg-indigo-500 text-white bg-indigo-600 font-semibold py-2 px-4 rounded-r">
+            Edit this kitchen
+    </button>   
+</div>
+<div class="flex justify-center items-center mb-5 mt-5 flex-col">
+    <h1 class="text-4xl"> Recipes </h1>
+    <div class="flex flex-row flex-wrap p-10 justify-center">
+    {% for recipe in recipes %}
+    {% if recipe.kitchen_id == kitchen.id %}
+        <div class="flex lg:p-5 sm:p-10 sm:mr-20 sm:ml-20 flex-1 flex-col justify-between m-2 border border-solid">
+            <h2 class="font-bold"> {{ recipe.name }} </h2>
+            <h3 class="font-semibold"> {{ recipe.type }} </h3>
+            <h3 id="{{ recipe.level }}"> {{ recipe.level }} </h3>
+            <button onclick="location.href='/recipe/show?id={{recipe.id}}'"
+                    class="text-sm mt-2 text-indigo-50 transition duration-150 hover:bg-indigo-500 text-white bg-indigo-600 font-semibold py-2 px-4 rounded-r">
+                    View recipe
+        </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+    <div></div>
+</div>

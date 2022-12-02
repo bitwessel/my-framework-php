@@ -1,0 +1,54 @@
+<section class="mt-10">
+  <div class="px-6 h-full text-gray-800">
+    <div
+      class="flex xl:justify-center lg:justify-between justify-center items-center flex-wrap h-full g-6">
+      <form method="POST">
+        <div class="flex flex-col items-center justify-center">
+        <h1 class="text-2xl py-2"> Register </h1>
+          <!-- Email input -->
+          <div class="mb-6">
+            <input
+              type="text"
+              class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleFormControlInput2"
+              placeholder="username"
+              name="username";
+            />
+          </div>
+
+          <!-- Password input -->
+          <div class="mb-6">
+            <input
+              type="password"
+              class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleFormControlInput2"
+              placeholder="Password"
+              name="password";
+            />
+          </div>
+          <div class="mb-6">
+            <input
+              type="password"
+              class="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              id="exampleFormControlInput2"
+              placeholder="Confirm password"
+              name="passwordConfirm";
+            />
+          </div>
+
+          <div class="flex text-center flex-col justify-center lg:text-left">
+            {% if error is defined %}
+                <span class="text-red-500 text-lg mb-4"> {{error}} </span>
+            {% endif %}
+            <input
+              type="submit"
+            class="px-7 py-3 bg-blue-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            name="register"
+            value="Register"
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

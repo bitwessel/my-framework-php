@@ -1,0 +1,37 @@
+<div class="flex flex-col items-center justify-center w-full rounded-lg overflow-hidden p">
+    <table class="w-7/12 leading-normal">
+        <thead>
+            <tr>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">
+                    Name
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kitchen in kitchens %}
+            <tr>
+                <td class="px-2 py-5 border-b border-gray-200 bg-white text-sm">
+                    <div class="flex items-center">
+                        <div class="ml-3">
+                            <p class="text-blue-800 text-lg whitespace-no-wrap">
+                                <a href="/kitchen/show?id={{kitchen.id}}">{{ kitchen.name }}
+                            </p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
+        <div class="inline-flex mt-2 xs:mt-0">
+            &nbsp; &nbsp;
+            <button onclick="location.href='/kitchen/create'"
+                class="text-sm text-indigo-50 transition duration-150 hover:bg-indigo-500 text-white bg-indigo-600 font-semibold py-2 px-4 rounded-r">
+                Create new kitchen
+            </button>
+        </div>
+    </div>
+</div>
+

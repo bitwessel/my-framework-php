@@ -1,0 +1,53 @@
+<div class="flex flex-column w-50 justify-center">
+    <form method="POST">
+        <div class="mb-6">
+            <ul>
+                <li class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="nameCreateRecipe">Name</label>
+                </li>
+                <li class="mb-6">
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="nameCreateRecipe" name="recipeName" required>
+                </li>
+                <li class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="typeOfMeal">Type of Kitchen</label>
+                </li>
+                <li class="mb-6">
+                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="typeOfMeal" name="kitchen" required>
+                    {% for kitchen in kitchens %}
+                        <option value="{{ kitchen.id }}">{{ kitchen.name }}</option>
+                    {% endfor %}
+                    </select>
+                </li>              
+                <li class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="typeOfMeal">Type of meal</label>
+                </li>
+                <li class="mb-6">
+                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="typeOfMeal" name="typeOfMeal" required>
+                        <option value="breakfast">breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                    </select>
+                </li>            
+                <li class="mb-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="dificulty">Difficulty</label>
+                </li>
+                <li class="mb-6">
+                    <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="difficulty" name="difficulty" required>
+                    {% for difficulty in difficulties %}
+                        <option value="{{ difficulty }}">{{ difficulty }}</option>
+                    {% endfor %}
+                    </select>
+                </li>
+                <div class="flex flex-row-reverse">
+                    <li class="mb-2">
+                        <input class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded-full" type="submit" name="createRecipe" value="create">
+                    </li>
+            </form>
+                    <li>
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded-full"><a href="/recipe">Back</a></button>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </table>
+</div>

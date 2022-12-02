@@ -1,0 +1,68 @@
+<div class="flex flex-col items-center justify-center w-full rounded-lg overflow-hidden p">
+    <table class="w-7/12 leading-normal">
+        <thead>
+            <tr>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">
+                    Name
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">
+                    Type
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">
+                    Level
+                </th>
+                <th
+                    class="px-5 py-3 border-b-2 border-gray-200 bg-gray-200 text-left text-base font-semibold text-gray-600 uppercase tracking-wider">
+                    Kitchen
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+            <tr>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white">
+                    <div class="flex items-center">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            <a href="/recipe/show?id={{recipe.id}}"> {{ recipe.name }} 
+                        </p>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white">
+                    <div class="flex items-center">
+                        <p class="text-gray-900 whitespace-no-wrap">
+                            {{ recipe.type }}
+                        </p>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white">
+                    <div id="{{recipe.level}}" class="flex items-center">
+                        <p id="{{recipe.level}}" class="text-gray-900 whitespace-no-wrap">
+                            {{ recipe.level }} 
+                        </p>
+                    </div>
+                </td>
+                <td class="px-5 py-5 border-b border-gray-200 bg-white">
+                    <div class="flex items-center">
+                        <p class="text-blue-700 whitespace-no-wrap">
+                            <a href="/kitchen/show?id={{ recipe.__get('kitchen').id }}"> {{ recipe.__get('kitchen').name }} 
+                        </p>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
+        <div class="inline-flex mt-2 xs:mt-0">
+            &nbsp; &nbsp;
+            <button onclick="location.href='/recipe/create'"
+                class="text-sm text-indigo-50 transition duration-150 hover:bg-indigo-500 bg-indigo-600 text-white font-semibold py-2 px-4 rounded-r">
+                Create new recipe
+            </button>
+        </div>
+    </div>
+</div>
+
