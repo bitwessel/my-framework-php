@@ -1,4 +1,4 @@
-# my-framework-php
+# my-php-framework
 Made my own framework. This was a solo project that I made for school.
 
 With "my" framework, I build a website  that has a router that dyamicly redirects you to the right class and method based on the URL input from a user or clicked link. 
