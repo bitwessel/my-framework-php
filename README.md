@@ -1,8 +1,9 @@
 # my-php-framework
-Made my own framework. This was a solo project that I made for school.
+Made my own framework. This was a solo project that I made to teah myself about how frameworks work by building one myself.
 
-With "my" framework, I build a website  that has a router that dyamicly redirects you to the right class and method based on the URL input from a user or clicked link. 
+The website has a router that dyamicly redirects you to the right class and method based on the URL input from a user or clicked link. 
 This was build with php, composer, twig, mysql and redbean.
+It is a crud application that only alows logged in users to make changes (add, remove and edit) things.
 
 ## how to use
 
