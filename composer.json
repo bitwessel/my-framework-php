@@ -1,6 +1,6 @@
 {
     "require": {
-        "twig/twig": "3.3",
+        "twig/twig": "3.4.3",
         "gabordemooij/redbean": "dev-master"
     },
     "autoload": {
